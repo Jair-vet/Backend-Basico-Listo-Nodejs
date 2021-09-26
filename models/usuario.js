@@ -30,13 +30,15 @@ const UsuarioSchema = Schema({
     google: {
         type: Boolean,
         default: false
-    }
+    }, 
+
 });
 
 // Funcion que sirve para decirle que mostrar en el Json 
 
 UsuarioSchema.methods.toJSON = function (){
-    const { __v, password, ...usuario} = this.toObject(); // no vamos a mostrar v,password, todo lo demas se guardar en usuario
+    const { __v, password,_id, ...usuario} = this.toObject(); // no vamos a mostrar v,password, todo lo demas se guardar en usuario
+    usuario.uid = _id;
     return usuario; // regresamos el usuario
 }
 
