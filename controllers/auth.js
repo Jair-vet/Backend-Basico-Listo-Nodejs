@@ -59,8 +59,6 @@ const googleSignIn = async(req, res = response) => {
     const {id_token} = req.body;
 
     try {
-        
-        
         const {nombre, correo, img} = await googleVerify(id_token);
         
         let usuario = await Usuario.findOne({correo});
@@ -71,7 +69,6 @@ const googleSignIn = async(req, res = response) => {
             const data = {
                 nombre,
                 correo,
-                rol,
                 password: ':P',
                 img,
                 google: true
@@ -98,7 +95,7 @@ const googleSignIn = async(req, res = response) => {
         console.log(error);
         res.status(400).json({
             ok: false,
-            msg: 'El Token no se pudo verificar'
+            msg: 'El Token no se pudo verificar, Sorry'
         });
         
     }
