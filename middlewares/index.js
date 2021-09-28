@@ -8,7 +8,7 @@ module.exports ={
     ...validarCampos,
     ...validarJWT,
     ...tieneRol,
-   // ...esAdminRole
+   ...esAdminRole
 
 }
 

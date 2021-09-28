@@ -10,7 +10,7 @@ const {validarCampos,
         esAdminRole
 } = require('../middlewares');
 
-const { esRoleValido,emailExiste,existeUsuarioPorId } = require('../helpers/db-validatos');
+const { esRoleValido,emailExiste,existeUsuarioPorId } = require('../helpers/db-validators');
 
 const { usuariosGet, 
         usuariosPost, 
